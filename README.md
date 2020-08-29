@@ -10,7 +10,7 @@
 
 ## [![watch](images/youtube.png)](https://youtu.be/Z9fsyhKHWDg) [IoT Smart Home Automation Project Full Demo Video](https://youtu.be/Z9fsyhKHWDg)
 
-## ℹ️ Inroduction:
+## ℹ️ Inroduction :
 
 <ul>
   <li>IoT Smart Home Automation is a solution that enable us to control our home appliaces through Mobile, PC/Laptop, Alexa, Google Assistant and Telegram. This project even provides user to monitor power consumption of respective devices.</li>
@@ -37,7 +37,11 @@
       <li>Consumption data can be filtered by date.</li>
     </ul>
   </li>
-  
+  <li>Smart light mode:
+    <ul>
+      <li>This feature is implemented using PIR Motion Sensor which detects movement of leaving objects. Thus when any person is in the range of sensor, light will be turned on otherwise turned off automatically.</li>
+    </ul>
+  </li>
 </ul>
 
 <div align='center'>
@@ -97,18 +101,24 @@
 </div>
 <br><br>
 <div align='center'>
- <img src="images/app_smartlightmode.jpg" height='300'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="images/app_smartlightmode.jpg" height='300'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <img src="images/app_totalusage.jpg" height='300'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <img src="images/app_billestimation.jpg" height='300'>
 </div>
 <br><br>
 <div align='center'>
- <img src="images/web_home.jpg" height='200'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="images/web_home.jpg" height='200'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <img src="images/web_power_usage.jpg" height='200'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  
 </div>
+
 <div align='center'>
- <img src="images/web_login.jpg" height='200'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="images/web_login.jpg" height='200'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <img src="images/web_smart_light.jpg" height='200'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  
 </div>
+
+## 🤝🏻 Project Team :
+
+**1.  Abhishek Jain**
+<br><br>&nbsp;&nbsp;&nbsp;<a href='https://github.com/abhijain2472'><img src='images/github.png' width=90></a>
+<br>&nbsp;&nbsp;&nbsp;<a href='https://github.com/abhijain2472'><img src='images/linkedin.png' width=90></a>
+<br>&nbsp;&nbsp;&nbsp;<a href='https://github.com/abhijain2472'><img src='images/twitter.png' width=50></a>
