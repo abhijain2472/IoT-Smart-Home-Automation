@@ -119,16 +119,16 @@
 ## 🤝🏻 Project Team :
 
 **1.  Abhishek Jain (abhishekjain2472@gmail.com)**
-<br><br>&nbsp;&nbsp;&nbsp;<a href='https://github.com/abhijain2472'><img src='images/github.png' width=70></a>
-<br><br>&nbsp;&nbsp;&nbsp;<a href='https://www.linkedin.com/in/abhijain2472'><img src='images/linkedin.png' width=70></a>
-<br><br>&nbsp;&nbsp;&nbsp;<a href='https://twitter.com/abhijain2472?s=08'><img src='images/twitter.png' width=70></a>
+<br><br>&nbsp;&nbsp;&nbsp;<a href='https://github.com/abhijain2472' target='blank'><img src='images/github.png' width=70></a>
+<br><br>&nbsp;&nbsp;&nbsp;<a href='https://www.linkedin.com/in/abhijain2472' target='blank'><img src='images/linkedin.png' width=70></a>
+<br><br>&nbsp;&nbsp;&nbsp;<a href='https://twitter.com/abhijain2472?s=08' target='blank'><img src='images/twitter.png' width=70></a>
 <br><br><br>
 **2.  Dhruv Patel (dhruvap.2610@gmail.com)**
-<br><br>&nbsp;&nbsp;&nbsp;<a href='https://github.com/dhruv2610'><img src='images/github.png' width=70></a>
-<br><br>&nbsp;&nbsp;&nbsp;<a href='https://www.linkedin.com/in/dhruv-patel-abb962188'><img src='images/linkedin.png' width=70></a>
-<br><br>&nbsp;&nbsp;&nbsp;<a href='https://twitter.com/Dhruvpatel261?s=08'><img src='images/twitter.png' width=70></a>
+<br><br>&nbsp;&nbsp;&nbsp;<a href='https://github.com/dhruv2610' target='blank'><img src='images/github.png' width=70></a>
+<br><br>&nbsp;&nbsp;&nbsp;<a href='https://www.linkedin.com/in/dhruv-patel-abb962188' target='blank'><img src='images/linkedin.png' width=70></a>
+<br><br>&nbsp;&nbsp;&nbsp;<a href='https://twitter.com/Dhruvpatel261?s=08' target='blank'><img src='images/twitter.png' width=70></a>
 <br><br><br>
 **3.  Raj Sathawara (rajsathawara@gmail.com)**
-<br><br>&nbsp;&nbsp;&nbsp;<a href='https://github.com/raj1234sa'><img src='images/github.png' width=70></a>
-<br><br>&nbsp;&nbsp;&nbsp;<a href='https://www.linkedin.com/in/raj-sathawara-681752117'><img src='images/linkedin.png' width=70></a>
-<br><br>&nbsp;&nbsp;&nbsp;<a href='https://twitter.com/KadiyaPratham?s=08'><img src='images/twitter.png' width=70></a>
+<br><br>&nbsp;&nbsp;&nbsp;<a href='https://github.com/raj1234sa' target='blank'><img src='images/github.png' width=70></a>
+<br><br>&nbsp;&nbsp;&nbsp;<a href='https://www.linkedin.com/in/raj-sathawara-681752117' target='blank'><img src='images/linkedin.png' width=70></a>
+<br><br>&nbsp;&nbsp;&nbsp;<a href='https://twitter.com/KadiyaPratham?s=08' target='blank'><img src='images/twitter.png' width=70></a>
