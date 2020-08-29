@@ -37,25 +37,29 @@
   </li>
 </ul>
 
-## Technologies :
+## 🤖 Technologies :
 
 <ul>
   <li>
-    HTML, CSS, JS <img src='images/hcj.png'>
+    Front End
+    <br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <img src='images/hcj.png' width=250>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <img src='images/flutter.png' width=250>
   </li>
   <li>
-    Arduino <img src='images/arduino.png'>
+    Arduino&nbsp;&nbsp;<img src='images/arduino.png' width=40>
   </li>
   <li>
-    Dialogflow <img src='images/df.png'>
+    Node JS&nbsp;&nbsp;<img src='images/node.png' width=40>
   </li>
   <li>
-    Fluter <img src='images/flutter.png'>
+    Dialogflow&nbsp;&nbsp;<img src='images/df.png' width=40>
   </li>
   <li>
-    Firebase <img src='images/firebase.png'>
+    Firebase&nbsp;&nbsp;<img src='images/firebase.png' width=40>
   </li>
   <li>
-    Amazon Alexa <img src='images/alexa.png'>
+    Amazon Alexa&nbsp;&nbsp;<img src='images/alexa.png' width=40>
   </li>
 </ul>
