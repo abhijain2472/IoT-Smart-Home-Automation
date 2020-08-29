@@ -1,0 +1,77 @@
+{
+  "project_info": {
+    "project_number": "512532285678",
+    "firebase_url": "https://iottest-7498a.firebaseio.com",
+    "project_id": "iottest-7498a",
+    "storage_bucket": "iottest-7498a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:512532285678:android:37dbf0b81d327d53398bff",
+        "android_client_info": {
+          "package_name": "com.example.homeautomation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "512532285678-8l68oqr7libo77p0721usi9tq40rgnde.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwOx7Q9ga7HbDc9S3FUFDc6QFF4w0kB7U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "512532285678-jisjimjg312p2iuevliho2euklq2d9v9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:512532285678:android:f3342085369c0a0b398bff",
+        "android_client_info": {
+          "package_name": "io.kodular.abhishekjain2472.NewProject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "512532285678-6qfr08kjob12o25qbkdjlj472jeui642.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.kodular.abhishekjain2472.NewProject",
+            "certificate_hash": "b6dd09e981aab05e58c62faeaf3f42e8d8984d72"
+          }
+        },
+        {
+          "client_id": "512532285678-8l68oqr7libo77p0721usi9tq40rgnde.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwOx7Q9ga7HbDc9S3FUFDc6QFF4w0kB7U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "512532285678-jisjimjg312p2iuevliho2euklq2d9v9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

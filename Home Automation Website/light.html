@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            @import  url(https://fonts.googleapis.com/css?family=Montserrat);
+
+::root
+{
+    --bg-color: #FFFFFF;
+--toggle-bg-color: #4281A4;
+--toggle-nub-color: #FF686B;
+--font-color: #4FBCA1;
+}
+
+
+body{
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: --bg-color;
+  font-family: Montserrat;
+}
+
+.toggle{
+  
+  margin-top: 40px;
+  input[type="checkbox"]{
+    display: none;
+  }
+  
+  label{
+    color: $font-color;
+    position: relative;
+  }
+  
+  input[type="checkbox"] + label::before{
+    content: ' ';
+    display: block;
+    height: 18px;
+    width: 45px;
+    border: 1px solid --toggle-bg-color;
+    border-radius: 9px;
+    position: absolute;
+    top: 0px;
+    left: -65px;
+    background: --toggle-bg-color;
+  }
+  
+  input[type="checkbox"] + label::after{
+    content: ' ';
+    display: block;
+    height: 30px;
+    width: 30px;
+    border: 1px solid --toggle-nub-color;   
+    border-radius: 50%;
+    position: absolute;
+    top: -6px;
+    left: -75px;
+    background: --toggle-nub-color;
+    transition: all 0.3s ease-in;
+  }
+  
+  input[type="checkbox"]:checked + label::after{
+    left: -40px; 
+    transition: all 0.3s ease-in;
+  }
+}
+        </style>
+    </head>
+    <body style="background-color: black">
+        <div class="toggle">
+  <input type="checkbox" id="temp">
+  <label for="temp">Toggle Switch</label>
+</div>
+    </body>
+</html>

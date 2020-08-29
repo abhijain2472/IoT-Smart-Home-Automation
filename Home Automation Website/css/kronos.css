@@ -1,0 +1,73 @@
+@charset "utf-8"; 
+
+.kronos-outer {display: inline-block; position: relative;}
+.kronos-outer  * {box-sizing: border-box;}
+
+.kronos-outer .kronos-input {box-sizing: border-box; height: 30px; padding: 22px 25px; border: 1px solid #cccccc;text-align: center;letter-spacing: 1px;font-size: 20px}
+.kronos-outer .kronos-input:focus, .kronos-outer .kronos-input:hover {border-color: #666666;}
+
+.kronos-outer .kronos-inner {overflow: hidden; position: absolute; top: -9999em; left: -9999em; width: 300px; background: #ffffff; box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2); transition: height 0.3s;}
+
+.kronos-outer.kronos-open .kronos-inner {top: auto; left: auto; z-index: 10;}
+.kronos-outer.kronos-visible .kronos-inner {position: relative; top: auto; left: auto;}
+
+/* year : z-index 20 */
+.kronos-year-outer {overflow: hidden; position: absolute; top: 0; left: 0; z-index: 20; width: 100%; height: 100%; background: #ffffff; transform: scale(1); transform-origin: center 150px;}
+.kronos-year-inner {position: absolute; top: 0; left: 0; width: 100%; height: 100%; transition: all 300ms;}
+.kronos-year-head {overflow: hidden; position: relative; height: 48px; padding: 12px; text-align: center;}
+.kronos-year-head .kronos-year-title {display: inline-block; border: none; background: none; line-height: 24px;}
+.kronos-year-head .kronos-year-prev {position: absolute; top: 12px; width: 24px; height: 24px; border: none; border-radius: 3px; text-indent: -9999em; cursor: pointer; left: 12px; background: url(../images/prev-month.png) center center no-repeat;}
+.kronos-year-head .kronos-year-prev:hover {border: 1px solid #dddddd;}
+.kronos-year-head .kronos-year-next {position: absolute; top: 12px; width: 24px; height: 24px; border: none; border-radius: 3px; text-indent: -9999em; cursor: pointer; right: 12px; background: url(../images/next-month.png) center center no-repeat;}
+.kronos-year-head .kronos-year-next:hover {border: 1px solid #dddddd;}
+.kronos-year-body {position: absolute; top: 48px; right: 0; bottom: 0; left: 0; padding: 10% 5%;}
+.kronos-year-body button {width: 30%; height: 30%; margin: 0 5% 5% 0; border: 1px solid #f7f7f7; border-radius: 5px; background: #f7f7f7; font-size: 12px; color: #000; vertical-align: middle; text-align: center; cursor: pointer;}
+.kronos-year-body button:nth-child(3n) {margin-right: 0;}
+.kronos-year-body button:hover {border-color: #000000;}
+.kronos-year-body button.selected {border-color: #000000; background: #000000; color: #ffffff;}
+
+/* month : z-index 10 */
+.kronos-month-outer {overflow: hidden; position: absolute; top: 0; left: 0; z-index: 10; width: 100%; height: 100%; background: #ffffff; transform: scale(1); transform-origin: center 150px;}
+.kronos-month-inner {position: absolute; top: 0; left: 0; width: 100%; height: 100%; transition: all 300ms;}
+.kronos-month-head {overflow: hidden; position: relative; height: 48px; padding: 12px; text-align: center;}
+.kronos-month-head .kronos-month-title {display: inline-block; border: none; background: none; line-height: 24px; cursor: pointer;}
+.kronos-month-head .kronos-month-title:hover {color: #000000;}
+.kronos-month-head .kronos-month-prev {position: absolute; top: 12px; width: 24px; height: 24px; border: none; border-radius: 3px; text-indent: -9999em; cursor: pointer; left: 12px; background: url(../images/prev-month.png) center center no-repeat;}
+.kronos-month-head .kronos-month-prev:hover {border: 1px solid #dddddd;}
+.kronos-month-head .kronos-month-next {position: absolute; top: 12px; width: 24px; height: 24px; border: none; border-radius: 3px; text-indent: -9999em; cursor: pointer; right: 12px; background: url(../images/next-month.png) center center no-repeat;}
+.kronos-month-head .kronos-month-next:hover {border: 1px solid #dddddd;}
+.kronos-month-body {position: absolute; top: 48px; right: 0; bottom: 0; left: 0; padding: 10% 5%;}
+.kronos-month-body button {width: 30%; height: 20%; margin: 0 5% 5% 0; border: 1px solid #f7f7f7; border-radius: 5px; background: #f7f7f7; font-size: 12px; color: #000; vertical-align: middle; text-align: center; cursor: pointer;}
+.kronos-month-body button:nth-child(3n) {margin-right: 0;}
+.kronos-month-body button:hover {border-color: #000000;}
+.kronos-month-body button.selected {border-color: #000000; background: #000000; color: #ffffff;}
+
+/* date */
+.kronos-date-outer {position: relative; top: 0; transform: scale(1); transform-origin: center 150px;}
+.kronos-date-inner {position: absolute; width: 100%; vertical-align: top; transition: all 300ms;}
+.kronos-date-head {overflow: hidden; position: relative; height: 48px; padding: 12px; text-align: center;}
+.kronos-date-head .kronos-date-title {display: inline-block; border: none; background: none; line-height: 24px; cursor: pointer;}
+.kronos-date-head .kronos-date-title:hover {color: #000000;}
+.kronos-date-head .kronos-date-prev {position: absolute; top: 12px; width: 24px; height: 24px; border: none; border-radius: 3px; text-indent: -9999em; cursor: pointer; left: 12px; background: url(../images/prev-month.png) center center no-repeat;}
+.kronos-date-head .kronos-date-prev:hover {border: 1px solid #dddddd;}
+.kronos-date-head .kronos-date-next {position: absolute; top: 12px; width: 24px; height: 24px; border: none; border-radius: 3px; text-indent: -9999em; cursor: pointer; right: 12px; background: url(../images/next-month.png) center center no-repeat;}
+.kronos-date-head .kronos-date-next:hover {border: 1px solid #dddddd;}
+.kronos-date-body table {width: 100%; border-spacing: 0; table-layout: fixed;}
+.kronos-date-body table thead tr th {height: 30px; font-size: 13px; text-align: center}
+.kronos-date-body table tbody tr td {border: 1px solid #fff;}
+.kronos-date-body table tbody tr td button {display: block; box-sizing: border-box; width: 100%; height: 40px; border: 1px solid #f7f7f7; border-radius: 5px; background: #f7f7f7; font-size: 12px; color: #000; vertical-align: middle; text-align: center; cursor: pointer;}
+.kronos-date-body table tbody tr td.sunday button {color: #f00;}
+.kronos-date-body table tbody tr td.satday button {color: #00f;}
+.kronos-date-body table tbody tr td.holiday button {color: #f00;}
+.kronos-date-body table tbody tr td.period button {border-color: #6f7abf; background: #6f7abf; color: #fff;}
+.kronos-date-body table tbody tr td.selected button {border-color: #323e87; background: #323e87; color: #fff;}
+.kronos-date-body table tbody tr td.disabled button {border-color: #f7f7f7 !important; background: #ccc; color: #eee !important; cursor: default;}
+.kronos-date-body table tbody tr td.today button {background: #000; color: #fff;}
+.kronos-date-body table tbody tr td button:focus, .kronos-outer .kronos-viewer .kronos-inner .kronos-body table tbody tr td button:hover {border-color: #000 !important;}
+
+/* motion */
+.kronos-outer-scale-r {transform: scale(0.5); opacity: 0; height: 0;}
+.kronos-outer-scale-h {transform: scale(1.5); opacity: 0; height: 0;}
+
+.kronos-outer-show {transition: transform 500ms, opacity 500ms, height 1ms;}
+.kronos-outer-hide {transition: transform 500ms, opacity 500ms, height 1ms 500ms;}

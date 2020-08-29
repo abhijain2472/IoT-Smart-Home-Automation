@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Home Automation</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--===============================================================================================-->	
+        <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+        <!--===============================================================================================-->	
+        <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="css/util.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <!--===============================================================================================-->
+        <link href="css/buttonLoader.css" rel="stylesheet" type="text/css">
+        <style>
+            .noti-container
+            {
+                width: 440px !important;
+                height: 210px;
+                left: 50%;
+                top: 50%;
+                display: inline-block;
+                transform: translate(-50%,-50%);
+                text-align: center;
+                position: absolute;
+                background: rgba(255,255,255,0.9);
+                border:2px solid rgb(0,255,0);
+                color: #fff;
+                font-weight: bold;
+                border-radius: 5px;
+                z-index: 1000;
+                padding: 10px 20px;
+                box-shadow: 0px 0px 57px 0px rgba(0,0,0,0.6);
+            }
+            .passeye
+            {
+                position: absolute;
+                top: 9px;
+                right: -30px;
+                font-size: 22px;
+            }
+            .input100
+            {
+                transition: 1s;
+            }
+            .input100:hover
+            {
+                box-shadow: 0px 0px 9px -3px rgb(0,225,0);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="noti-container">
+            <img src="images/check.png" style="width: 145px"><br><font style="font-family: Poppins-Bold;font-size: 27px;color: #000;font-weight: bolder">Key is successfully changed</font>
+        </div>
+        <div class="limiter">
+            <div class="container-login100">
+                <div class="wrap-login100" style="box-shadow: -1px 2px 28px 15px #0ff;width: auto;padding: 50px 95px 50px 95px;">
+
+                    <form id="form1" class="login100-form validate-form" action="onoff.html" onsubmit="return validkey()" style="">
+                        <span class="login100-form-title">
+                            Change Secret Key
+                        </span>
+                        <div class="wrap-input100 validate-input" id="input" data-validate = "Must be 6 digits and required">
+                            <input class="input100" id="current" onkeyup="authKey(this)" type="password" placeholder="Current Secret Key">
+                            <span class="passeye" onclick="showp(this)"><i class="fa fa-eye"></i></span>
+                            <span style="position: absolute;right: 7%;top: 25%;" id="currerr"></span>
+                            <span class="focus-input100"></span>
+                            <span class="symbol-input100">
+                                <i class="fa fa-key" aria-hidden="true"></i>
+                            </span>
+                        </div>
+
+                        <div class="wrap-input100 validate-input"  data-validate = "Must be 6 digits and required">
+                            <input class="input100 new-key" id="key1" type="password" placeholder="New Secret Key">
+                            <span class="passeye" onclick="showp(this)"><i class="fa fa-eye"></i></span>
+                            <span class="focus-input100"></span>
+                            <span class="symbol-input100">
+                                <i class="fa fa-key" aria-hidden="true"></i>
+                            </span>
+                        </div>
+
+                        <div class="wrap-input100 validate-input"  data-validate = "Must be 6 digits and required">
+                            <input class="input100 new-key" id="key2" type="password" placeholder="Confirm New Secret Key">
+                            <span class="passeye" onclick="showp(this)"><i class="fa fa-eye"></i></span>
+                            <span class="focus-input100"></span>
+                            <span class="symbol-input100">
+                                <i class="fa fa-key" aria-hidden="true"></i>
+                            </span>
+                        </div>
+
+                        <div style="text-align: center;color: red" id="erro"> </div>
+                        <div class="container-login100-form-btn">
+                            <button class="login100-form-btn btn btn-default has-spinner" id="otpbtn">
+                                Verify
+                            </button>
+                        </div>
+
+                        <!--<a class="btn btn-warning has-spinner" id="btn4">Button4</a>-->
+                    </form>
+                    <div class="text-center p-t-136">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
+        <!--===============================================================================================-->	
+        <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+        <!--===============================================================================================-->
+        <script src="vendor/bootstrap/js/popper.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+        <!--===============================================================================================-->
+        <script src="vendor/select2/select2.min.js"></script>
+        <!--===============================================================================================-->
+        <script src="vendor/tilt/tilt.jquery.min.js"></script>
+        <script>
+                                function checkCookie(name) {
+                                    var cooks = document.cookie.split(";");
+                                    for (var i = 0; i < cooks.length; i++) {
+                                        var cname = cooks[i].split("=")[0];
+                                        var cval = cooks[i].split("=")[1];
+                                        if (cname == name) {
+                                            if (cval == "")
+                                                return null;
+                                            else
+                                                return cval;
+                                        }
+                                        else {
+                                            return null;
+                                        }
+                                    }
+                                }
+
+                                if (checkCookie("username") == null) {
+                                    window.location = "index.html"
+                                }
+                                function showp(span)
+                                {
+                                    var classn = $(span).children().attr("class");
+                                    if (classn.indexOf("slash") == -1)
+                                    {
+                                        $(span).siblings("input").attr("type", "text");
+                                        $(span).children("i").removeClass("fa-eye");
+                                        $(span).children("i").addClass("fa-eye-slash");
+                                    }
+                                    else
+                                    {
+                                        $(span).siblings("input").attr("type", "password");
+                                        $(span).children("i").removeClass("fa-eye-slash");
+                                        $(span).children("i").addClass("fa-eye");
+                                    }
+
+                                }
+
+                                $(document).ready(function ()
+                                {
+
+                                    $("input.input100").each(function ()
+                                    {
+                                        $(this).focus(function ()
+                                        {
+                                            $(this).css("box-shadow", "0px 0px 18px -3px rgb(0,200,0)");
+                                        });
+                                        $(this).focusout(function ()
+                                        {
+                                            $(this).css("box-shadow", "");
+                                        });
+                                    });
+
+                                    $("div.noti-container").hide();
+                                    $("input.new-key").each(function ()
+                                    {
+                                        $(this).attr("disabled", "");
+                                    });
+
+                                    $("button").each(function ()
+                                    {
+                                        $(this).attr("disabled", "");
+                                    });
+                                });
+                                $('.js-tilt').tilt({
+                                    scale: 1.1
+                                });
+
+                                var _gaq = _gaq || [];
+                                _gaq.push(['_setAccount', 'UA-36251023-1']);
+                                _gaq.push(['_setDomainName', 'jqueryscript.net']);
+                                _gaq.push(['_trackPageview']);
+
+                                (function () {
+                                    var ga = document.createElement('script');
+                                    ga.type = 'text/javascript';
+                                    ga.async = true;
+                                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                                    var s = document.getElementsByTagName('script')[0];
+                                    s.parentNode.insertBefore(ga, s);
+                                })();
+
+                                var firebaseConfig = {
+                                    apiKey: "AIzaSyD34Ohi70QLhyUFcw6qVhhe9NV7JsErjJg",
+                                    authDomain: "iottest-7498a.firebaseapp.com",
+                                    databaseURL: "https://iottest-7498a.firebaseio.com",
+                                    projectId: "iottest-7498a",
+                                    storageBucket: "iottest-7498a.appspot.com",
+                                    messagingSenderId: "512532285678",
+                                    appId: "1:512532285678:web:8249b844f9bb9dd3398bff",
+                                    measurementId: "G-R98L1JZWTR"
+                                };
+                                // Initialize Firebase
+                                firebase.initializeApp(firebaseConfig);
+
+                                var ref = firebase.database().ref("/security");
+                                var dbkey = 0;
+                                ref.on("value", function (snapshot)
+                                {
+                                    dbkey = snapshot.val().key;
+                                });
+                                function authKey(event)
+                                {
+                                    var currkey = event.value;
+                                    if (currkey == dbkey)
+                                    {
+                                        document.getElementById("currerr").innerHTML = "<i class='fa fa-check' style='color: rgba(0,208,0);font-size: 24px;'></i>";
+                                        $("input.new-key").each(function ()
+                                        {
+                                            $(this).removeAttr("disabled");
+                                        });
+                                        $("button").each(function ()
+                                        {
+                                            $(this).removeAttr("disabled");
+                                        });
+                                    }
+                                    else
+                                    {
+                                        $("input.new-key").each(function ()
+                                        {
+                                            $(this).attr("disabled", "");
+                                        });
+                                        $("button").each(function ()
+                                        {
+                                            $(this).attr("disabled", "");
+                                        });
+                                        document.getElementById("currerr").innerHTML = "<i class='fa fa-close' title='Current key is incorrect' style='color: red;font-size: 24px;'></i>";
+                                    }
+                                }
+
+                                function validkey()
+                                {
+                                    var k1 = $("input#key1");
+                                    var k2 = $("input#key2");
+                                    if (k1.val().length != 6)
+                                    {
+                                        k1.parent().addClass("alert-validate");
+                                    }
+                                    else
+                                    {
+                                        k1.parent().removeClass("alert-validate");
+                                    }
+
+                                    if (k2.val().length != 6)
+                                    {
+                                        k2.parent().addClass("alert-validate");
+                                    }
+                                    else
+                                    {
+                                        k2.parent().removeClass("alert-validate");
+                                    }
+
+                                    if (k2.val().length == 6 && k1.val().length == 6)
+                                    {
+                                        if (k1.val() != k2.val())
+                                        {
+                                            document.getElementById("erro").innerHTML = "<i class='fa fa-warning' style='margin-right:4px'></i>Keys not matched";
+                                        }
+                                        else
+                                        {
+                                            document.getElementById("erro").innerHTML = "";
+                                            var newk = k1.val();
+                                            ref.set({key: newk});
+                                            $("div.noti-container").show(1000);
+                                            setTimeout(function ()
+                                            {
+                                                document.cookie = "username="
+                                                window.location = "index.html";
+                                            }, 2000);
+                                        }
+                                    }
+                                    return false;
+                                }
+        </script>
+        <!--===============================================================================================-->
+        <script src="js/main.js"></script>
+        <script src="js/jquery.buttonLoader.js"></script>
+    </body>
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home Automation</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
+        <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+        <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/download.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <script src="js/jquery.min.js"></script>
+        <style>
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: 100vh;
+                display: flex;
+                background: #000;
+            }
+
+            .header
+            {
+                background: #fff;
+                top: 0;
+                box-shadow: 0px 2px 12px #fcb519;
+            }
+            .position-sticky {
+                box-shadow: 0px 2px 12px #fcb519
+            }
+            a
+            {
+                text-decoration: none;
+            }
+
+            .header .title
+            {
+                padding: 5px 20px;
+            }
+
+            .header .title a
+            {
+                font-size: 25px;
+                font-family: Poppins-Bold;
+            }
+
+            .row
+            {
+                margin: 0px;
+            }
+
+            .glow {
+                font-size: 35px;
+                color: #fff;
+                margin: 0 auto;
+                text-align: center;
+                -webkit-animation: glow 1s ease-in-out infinite alternate;
+                -moz-animation: glow 1s ease-in-out infinite alternate;
+                animation: glow 1s ease-in-out infinite alternate;
+            }
+
+            @-webkit-keyframes glow {
+                from {
+                    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #1354cf, 0 0 40px #1354cf, 0 0 50px #1354cf, 0 0 60px #1354cf, 0 0 70px #1354cf;
+                }
+
+                to {
+                    text-shadow: 0 0 20px #fff, 0 0 30px #427ae3, 0 0 40px #427ae3, 0 0 50px #427ae3, 0 0 60px #427ae3, 0 0 70px #427ae3, 0 0 80px #427ae3;
+                }
+            }
+
+            .icon:hover
+            {
+                width: 70px
+            }
+
+
+            i{
+                position: absolute;
+                left: 31px;
+                top: 13px;
+                font-size: 36px;
+            }
+
+
+            .custom-toggle{position: relative;margin:  0; font-weight: bold; font-size: 18px}
+            .custom-toggle::before
+            {
+                content: "";
+                position: absolute;
+                width: 40px;
+                height: 54%;
+                left: 100%;
+                margin-left: 15px;
+                border: 1px solid #bbb;
+                border-radius: 100px;
+            }
+            .unchecked::after
+            {
+                content: "";
+                position: absolute;
+                width: 19px;
+                height: 75%;
+                right: -31px;
+                border-radius: 100px;
+                background: red;
+                transition: 0.4s;
+            }
+            .unchecked::before{background: rgba(255,0,0,0.2)}
+            .checked::before{background: rgba(0,255,0,0.2)}
+            .checked::after
+            {
+                content: "";
+                position: absolute;
+                width: 19px;
+                height: 75%;
+                right: -57px;
+                border-radius: 100px;
+                background: rgb(0,250,0);
+                transition: 0.4s;
+            }
+            .smart-light
+            {
+                background: #1290B3FE;
+            }
+            .smart-light label
+            {
+                color: white;
+                width: fit-content;
+            }
+            .video
+            {
+                display: none;
+            }
+            .position-sticky {
+                z-index: 100;
+            }
+
+        </style>
+
+    </head>
+    <body>
+        <div class="container-fluid" style="padding: 0px">
+            <div class="position-sticky" style="top: 0">
+                <div class="row header">
+                    <div class="col-md-12 col-sm-12 col-xs-12 title" style="text-align: center">
+                        <a href="onoff.html">IoT based Smart Home Automation System</a>
+                    </div>
+                </div>
+                <div class="smart-light py-1">
+                    <input type="checkbox" class="custom-control-input" id="switch1">
+                    <label class="custom-toggle d-flex align-items-center mx-auto unchecked" for="switch1">Smart Light Mode</label>
+                </div>
+            </div>
+            <div class="row" style="position: absolute;right: 40px;">
+                <a href="change-key.html">
+                    <div id="btn1" class="button">
+                        <i style="font-size: 36px" class="fa fa-key"></i><h1>Change Key</h1>
+                    </div>
+                </a>
+
+                <a href="javascript:void();" onclick="logout()">
+                    <div id="btn2" class="button">
+                        <i class="fa fa-sign-out" style="font-size: 36px;"></i><h1>Logout</h1>
+                    </div>
+                </a>
+
+                <a href="download/Home Automation.apk">
+                    <div id="btn3" class="button">
+                        <i class="fa fa-download" style="font-size: 36px;"></i><h1>Download APK</h1>
+                    </div>
+                </a>
+                
+                <a href="consumption.html">
+                    <div id="btn4" class="button">
+                        <i class="fa fa-bolt" style="font-size: 36px;"></i><h1>Power Consumption</h1>
+                    </div>
+                </a>
+
+            </div>
+            <div class="row main">
+                <img class="" id="power-btn" onclick="switc()" src="images/off.png" style="cursor: pointer;width: 324px;margin: 5vw auto">
+                <!--<button class="glow-on-hover" id="power-btn" style="" onclick="switc()"><i class="fa fa-power-off"></i></button>-->
+            </div>
+            <div class="row main" id="stats" style="color: white">
+                <span class="glow col-md-4"></span>
+            </div>
+
+            <div class="row video no-gutters">
+                <center>
+                    <video src="images/light-bulb.mp4" autoplay loop>
+                        <source src="movie.mp4" type="video/mp4">
+                        <source src="movie.ogg" type="video/ogg">
+                    </video>
+                </center>
+            </div>
+        </div>
+
+        <!--        <button onclick="on()">ON</button>
+                <button onclick="off()">OFF</button>
+        
+                <p id="data"></p>-->
+        <script type="text/javascript">
+            function checkCookie(name) {
+                var cooks = document.cookie.split("; ");
+                for (var i = 0; i < cooks.length; i++) {
+                    var cname = cooks[i].split("=")[0];
+                    var cval = cooks[i].split("=")[1];
+                    if (cname == name) {
+                        if (cval == "")
+                            return null;
+                        else
+                            return cval;
+                    }
+                    else {
+                        return null;
+                    }
+                }
+            }
+
+            if (checkCookie("username") == null) {
+                window.location = "index.html"
+            }
+
+            var firebaseConfig = {
+                apiKey: "AIzaSyD34Ohi70QLhyUFcw6qVhhe9NV7JsErjJg",
+                authDomain: "iottest-7498a.firebaseapp.com",
+                databaseURL: "https://iottest-7498a.firebaseio.com",
+                projectId: "iottest-7498a",
+                storageBucket: "iottest-7498a.appspot.com",
+                messagingSenderId: "512532285678",
+                appId: "1:512532285678:web:8249b844f9bb9dd3398bff",
+                measurementId: "G-R98L1JZWTR"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            var ref = firebase.database().ref("/ledstatus");
+            var pirref = firebase.database().ref("/pir");
+
+            ref.on("value", function (snapshot)
+            {
+                var stat = snapshot.val().led;
+                window.stat = stat;
+                var snd = new Audio("sound/b.mp3");
+                snd.play();
+                if (stat === "1")
+                {
+                    document.getElementById("power-btn").setAttribute("src", "images/on.png");
+                    $("#stats").children("span").text("Light is ON");
+                }
+                else if (stat === "0")
+                {
+                    document.getElementById("power-btn").setAttribute("src", "images/off.png");
+                    $("#stats").children("span").text("Light is OFF");
+                }
+            });
+
+            pirref.on("value", function (snapshot)
+            {
+                var stat = snapshot.val().status;
+                var snd = new Audio("sound/smartlight.mp3");
+                snd.play();
+                if (stat === "1")
+                {
+                    document.getElementById("switch1").checked = true;
+                    $("#switch1").siblings("label.custom-toggle").addClass("checked").removeClass("unchecked");
+                    $("body").css("background", "white");
+                    $(".main").hide();
+                    $(".video").show();
+                }
+                else if (stat === "0")
+                {
+                    $(".main").show();
+                    $(".video").hide();
+                    $("body").css("background", "black");
+                    $("#switch1").siblings("label.custom-toggle").addClass("unchecked").removeClass("checked");
+                    document.getElementById("switch1").checked = false;
+                }
+            });
+
+            $("#switch1").change(function () {
+                if (document.getElementById("switch1").checked) {
+                    firebase.database().ref("/pir").set({status: "1"});
+                }
+                if (!document.getElementById("switch1").checked) {
+                    firebase.database().ref("/pir").set({status: "0"});
+                }
+            });
+
+            function openChapass()
+            {
+                window.location = "change-key.html";
+            }
+
+            function logout()
+            {
+                document.cookie = "username=";
+                window.location = "index.html";
+            }
+
+            function switc()
+            {
+                if (window.stat === "0")
+                {
+                    firebase.database().ref("/ledstatus").set({led: "1"});
+                }
+                else if (window.stat === "1")
+                {
+                    firebase.database().ref("/ledstatus").set({led: "0"});
+                }
+                else
+                {
+                    firebase.database().ref("/ledstatus").set({led: "0"});
+                }
+            }
+
+        </script>
+    </body>
+</html>

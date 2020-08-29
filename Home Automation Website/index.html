@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Home Automation</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
+        <!--===============================================================================================-->	
+        <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+        <!--===============================================================================================-->	
+        <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="css/util.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <!--===============================================================================================-->
+        <style>
+            .txt2:hover
+            {
+                color: red;
+            }
+            .passeye
+            {
+                position: absolute;
+                top: 9px;
+                right: -30px;
+                font-size: 22px;
+            }
+            .input100
+            {
+                transition: 1s;
+            }
+            .input100:hover
+            {
+                box-shadow: 0px 0px 9px -3px rgb(0,225,0);
+            }
+        </style>
+        <script>
+            var firebaseConfig = {
+                apiKey: "AIzaSyD34Ohi70QLhyUFcw6qVhhe9NV7JsErjJg",
+                authDomain: "iottest-7498a.firebaseapp.com",
+                databaseURL: "https://iottest-7498a.firebaseio.com",
+                projectId: "iottest-7498a",
+                storageBucket: "iottest-7498a.appspot.com",
+                messagingSenderId: "512532285678",
+                appId: "1:512532285678:web:8249b844f9bb9dd3398bff",
+                measurementId: "G-R98L1JZWTR"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+
+            var ref = firebase.database().ref("/security");
+            ref.on("value", function (snapshot)
+            {
+                window.k = snapshot.val().key;
+            });
+
+
+            function loginAuth()
+            {
+                var userkey = document.getElementById("secret").value;
+
+                if ($("input#secret").val() == "" || $("input#secret").val() == null)
+                    $("input#secret").parent().attr("data-validate", "Secret key is required");
+                else if ($("input#secret").val().length != 6)
+                {
+                    $("input#secret").parent().addClass("alert-validate");
+                    $("input#secret").parent().attr("data-validate", "Must be 6 characters");
+                }
+                else if (window.k === userkey)
+                {
+                    document.getElementById("erro").innerHTML = "";
+                    document.cookie = "username=raj";
+                    return true;
+                }
+                else
+                {
+                    document.getElementById("erro").innerHTML = "<i class='fa fa-warning style='margin-right: 6px' aria-hidden='true'></i>Secret key is incorrect";
+                    return false;
+                }
+                return false;
+            }
+
+            function showp(span)
+            {
+                var classn = $(span).children().attr("class");
+                if (classn.indexOf("slash") == -1)
+                {
+                    $(span).siblings("input").attr("type", "text");
+                    $(span).children("i").removeClass("fa-eye");
+                    $(span).children("i").addClass("fa-eye-slash");
+                }
+                else
+                {
+                    $(span).siblings("input").attr("type", "password");
+                    $(span).children("i").removeClass("fa-eye-slash");
+                    $(span).children("i").addClass("fa-eye");
+                }
+
+            }
+        </script>
+    </head>
+    <body>
+
+        <div class="limiter">
+            <div class="container-login100">
+                <div class="wrap-login100" style="box-shadow: -1px 2px 28px 15px #0ff;">
+                    <div class="login100-pic js-tilt" style="margin-left: -43px;margin-top: 22px;" data-tilt>
+                        <img src="images/img.png" style="border-radius: 50%;" alt="IMG">
+                    </div>
+
+                    <form id="form1" class="login100-form validate-form" action="onoff.html" onsubmit="return loginAuth()" style="margin-top: 75px;max-height: 357px;">
+                        <span class="login100-form-title">
+                            Welcome to HomeAutomation Portal
+                        </span>
+
+                        <div class="wrap-input100 validate-input" id="input" data-validate = "Secret key is required">
+                            <input class="input100" id="secret" type="password" placeholder="Secret Key">
+                            <span class="passeye" onclick="showp(this)"><i class="fa fa-eye"></i></span>
+                            <span class="focus-input100"></span>
+                            <span class="symbol-input100">
+                                <i class="fa fa-key" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                        <div style="text-align: center;color: red" id="erro"></div>
+                        <div class="container-login100-form-btn">
+                            <button class="login100-form-btn">
+                                Connect
+                            </button>
+                        </div>
+
+                        <div class="text-center p-t-12">
+                            <span class="txt1">
+
+                            </span>
+                            <a class="txt2" href="forgot.html">
+                                Forgot Secret Key ?
+                            </a>
+                        </div>
+
+                        <div class="text-center p-t-136">
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!--===============================================================================================-->	
+        <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+        <!--===============================================================================================-->
+        <script src="vendor/bootstrap/js/popper.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+        <!--===============================================================================================-->
+        <script src="vendor/select2/select2.min.js"></script>
+        <!--===============================================================================================-->
+        <script src="vendor/tilt/tilt.jquery.min.js"></script>
+        <script >
+                                $('.js-tilt').tilt({
+                                    scale: 1.1
+                                });
+                                $(document).ready(function ()
+                                {
+                                    $("input.input100").each(function ()
+                                    {
+                                        $(this).focus(function ()
+                                        {
+                                            $(this).css("box-shadow", "0px 0px 18px -3px rgb(0,200,0)");
+                                        });
+                                        $(this).focusout(function ()
+                                        {
+                                            $(this).css("box-shadow", "");
+                                        });
+                                    });
+                                });
+        </script>
+        <!--===============================================================================================-->
+        <script src="js/main.js"></script>
+
+    </body>
+</html>

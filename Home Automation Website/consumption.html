@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Power Consumption</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
+        <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+        <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/download.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/kronos.css">
+        <script src="js/jquery.min.js"></script>
+        <script src="js/kronos.js"></script>
+        <style>
+            .header
+            {
+                background: #fff;
+                top: 0;
+                box-shadow: 0px 2px 12px #fcb519;
+            }
+
+            a
+            {
+                text-decoration: none;
+            }
+
+            .header .title
+            {
+                padding: 5px 20px;
+            }
+
+            .header .title a
+            {
+                font-size: 25px;
+                font-family: Poppins-Bold;
+            }
+            .position-sticky {
+                z-index: 100;
+            }
+            @media (max-width : 768px)  {
+                .card {
+                    margin: 30px 0;
+                }
+            }
+            .card-header {
+                font-weight: bold;
+                color: #007bff;
+                font-size: 18px;
+            }
+
+            .card-body {
+                font-weight: bold;
+            }
+            .add::before {
+                content: "";
+                position: absolute;
+                background: #ffc107;
+                width: 80%;
+                height: 1px;
+                bottom: -10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container-fluid" style="padding: 0px">
+            <div class="row header position-sticky no-gutters">
+                <div class="col-md-12 col-sm-12 col-xs-12 title" style="text-align: center">
+                    <a href="onoff.html">IoT based Smart Home Automation System</a>
+                </div>
+            </div>
+
+            <div class="row no-gutters justify-content-center my-5">
+                <div class="col-12 d-flex justify-content-center text-warning">
+                    <h4 style="font-weight: bold;" class="add position-relative d-flex justify-content-center">Power Usage Statistics</h4>
+                </div>
+            </div>
+
+            <div class="row no-gutters justify-content-center my-4">
+                <div class="col-10 d-flex justify-content-center" style="color: skyblue">
+                    <h6><span style="vertical-align: text-top;">👉🏻</span>&nbsp;&nbsp;Select date for viewing data according to particular date</h6>
+                </div>
+            </div>
+
+            <div class="row no-gutters justify-content-center my-4">
+                <div class="col-12 d-flex justify-content-center">
+                    <div class="form-group">
+                        <div class="kronos-outer">
+                            <input type="text" id="kronos" readonly="" class="kronos-input form-control" style="background: white">
+                            <div class="kronos-inner">
+                                <div class="kronos-year-outer"></div>
+                                <div class="kronos-month-outer"></div>
+                                <div class="kronos-date-outer"></div>
+                            </div>
+                            <span class="position-absolute" style="right: 13px; padding: 7px 0px;font-size: 20px"><i class="fa fa-calendar"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row no-gutters justify-content-around my-5 data-container">
+                <div class="col-10 col-md-3 data">
+                    <div class="card">
+                        <div class="card-header text-center">Power</div>
+                        <div class="card-body text-center">0.000 Kwh</div>
+                    </div>
+                </div>
+
+                <div class="col-10 col-md-3 data">
+                    <div class="card">
+                        <div class="card-header text-center">Time</div>
+                        <div class="card-body text-center">0 second</div>
+                    </div>
+                </div>
+
+                <div class="col-10 col-md-3 data">
+                    <div class="card">
+                        <div class="card-header text-center">Amount</div>
+                        <div class="card-body text-center">0.000 ₹</div>
+                    </div>
+                </div>  
+            </div>
+
+            <div class="row no-gutters justify-content-center my-5 no-data-warning">
+                <div class="col-12 col-md-8 text-danger text-center" style="font-size: 20px; font-weight: bold">
+                    <i class="fa fa-warning text-warning"></i>&nbsp;&nbsp;<span>No data available for this date.</span>
+                </div>
+            </div>
+
+            <div class="row no-gutters justify-content-center my-5">
+                <div class="col-11 col-md-8">
+                    <hr class="mx-auto" style="background: red">
+                </div>
+            </div>
+
+            <div class="row no-gutters justify-content-center my-4">
+                <div class="col-12 d-flex justify-content-center text-warning">
+                    <h4 style="font-weight: bold;" class="add position-relative d-flex justify-content-center">Power Usage Summary</h4>
+                </div>
+            </div>
+
+            <div class="row no-gutters justify-content-around my-5 data-container">
+                <div class="col-10 col-md-2 mt-4">
+                    <div class="card">
+                        <div class="card-header text-center">Total Power Usage</div>
+                        <div class="card-body text-center sum-power">0.000 Kwh</div>
+                    </div>
+                </div>
+
+                <div class="col-10 col-md-2 mt-4">
+                    <div class="card">
+                        <div class="card-header text-center">Total Time Used</div>
+                        <div class="card-body text-center sum-time">0 second</div>
+                    </div>
+                </div>
+
+                <div class="col-10 col-md-2 mt-4">
+                    <div class="card">
+                        <div class="card-header text-center">Total Amount</div>
+                        <div class="card-body text-center sum-amount">0.000 ₹</div>
+                    </div>
+                </div>
+
+                <div class="col-10 col-md-2 mt-4">
+                    <div class="card">
+                        <div class="card-header text-center">Total Days</div>
+                        <div class="card-body text-center sum-days">0 days</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row no-gutters justify-content-center my-5">
+                <div class="col-11 col-md-8 d-flex justify-content-center">
+                    <button class="btn btn-link" style="font-size: 17px">Click here to view full summary of Power Usage &nbsp;<i class="fa fa-external-link"></i></button>
+                </div>
+            </div>
+
+            <div class="row no-gutters justify-content-center my-5">
+                <div class="col-11 col-md-8">
+                    <hr class="mx-auto" style="background: red">
+                </div>
+            </div>
+
+            <div class="row no-gutters justify-content-center my-4">
+                <div class="col-12 d-flex justify-content-center text-warning">
+                    <h4 style="font-weight: bold;" class="add position-relative d-flex justify-content-center">Estimated Bill Amount</h4>
+                </div>
+            </div>
+
+            <div class="row no-gutters justify-content-around my-5 data-container">
+                <div class="col-10 col-md-3">
+                    <select class="custom-select" id="est-months">
+                        <option value="1">1 Month</option>
+                        <option value="2">2 Month</option>
+                        <option value="3">3 Month</option>
+                        <option value="6">6 Month</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row no-gutters justify-content-center mt-5">
+                <div class="col-10 d-flex justify-content-center" style="color: skyblue">
+                    <h6 class="monthh"><span style="vertical-align: text-top;">👉🏻</span>&nbsp;&nbsp;Estimated electricity bill of 1 month based in average usage of power will be&nbsp;&nbsp;-></h6>
+                </div>
+            </div>
+
+            <div class="row no-gutters justify-content-around my-5 data-container">
+                <div class="col-10 col-md-3">
+                    <div class="card">
+                        <div class="card-header text-center">Amount</div>
+                        <div class="card-body text-center est-amount" style="font-size: 18px">0.000 ₹</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+
+            function checkCookie(name) {
+                var cooks = document.cookie.split("; ");
+                for (var i = 0; i < cooks.length; i++) {
+                    var cname = cooks[i].split("=")[0];
+                    var cval = cooks[i].split("=")[1];
+                    if (cname == name) {
+                        if (cval == "")
+                            return null;
+                        else
+                            return cval;
+                    }
+                    else {
+                        return null;
+                    }
+                }
+            }
+
+            if (checkCookie("username") == null) {
+                window.location = "index.html"
+            }
+
+            var firebaseConfig = {
+                apiKey: "AIzaSyD34Ohi70QLhyUFcw6qVhhe9NV7JsErjJg",
+                authDomain: "iottest-7498a.firebaseapp.com",
+                databaseURL: "https://iottest-7498a.firebaseio.com",
+                projectId: "iottest-7498a",
+                storageBucket: "iottest-7498a.appspot.com",
+                messagingSenderId: "512532285678",
+                appId: "1:512532285678:web:8249b844f9bb9dd3398bff",
+                measurementId: "G-R98L1JZWTR"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            var dateObj = new Date();
+            var month = ((dateObj.getMonth() + 1).toString().length == 1) ? "0" + (dateObj.getMonth() + 1).toString() : (dateObj.getMonth() + 1).toString();
+            var date = ((dateObj.getDate()).toString().length == 1) ? "0" + (dateObj.getDate()).toString() : (dateObj.getDate()).toString();
+            var current_date = dateObj.getFullYear() + "/" + month + "/" + date;
+            window.display_date = (dateObj.getFullYear().toString() + month.toString() + date.toString());
+            var ref = firebase.database().ref("/data/" + current_date);
+
+            $('#kronos').kronos({
+                initDate: window.display_date,
+                format: 'yyyy/mm/dd'
+            });
+
+            ref.on("value", function (snapshot)
+            {
+                if (!snapshot.exists()) {
+                    $(".data-container .data:first-child .card-body").text("0.000 Kwh");
+                    $(".data-container .data:nth-child(2) .card-body").text("0 second");
+                    $(".data-container .data:last-child .card-body").text("0.000 ₹");
+                    $(".data-container .data:first-child .card-body").css("color", "rgba(255,0,0,0.5)");
+                    $(".data-container .data:nth-child(2) .card-body").css("color", "rgba(255,0,0,0.5)");
+                    $(".data-container .data:last-child .card-body").css("color", "rgba(255,0,0,0.5)");
+                    $(".no-data-warning").show(500);
+                }
+                var power = snapshot.val().power;
+                var amount = snapshot.val().amount;
+                var time = snapshot.val().time;
+                var fulltime;
+                var hour, minute, second;
+                if (time >= 60) {
+                    minute = parseInt(time / 60);
+                    second = parseInt(time % 60);
+                    fulltime = minute + " m : " + second + " s";
+                }
+
+                if (minute >= 60) {
+                    hour = parseInt(minute / 60);
+                    minute = parseInt(minute % 60);
+                    fulltime = hour + " h : " + minute + " m";
+                }
+
+                if (time < 60) {
+                    second = parseInt(time);
+                    fulltime = second + " seconds";
+                }
+
+                $(".data-container .data:first-child .card-body").text(power.toFixed(3) + " Kwh");
+                $(".data-container .data:nth-child(2) .card-body").text(fulltime);
+                $(".data-container .data:last-child .card-body").text(amount.toFixed(3) + " ₹");
+            });
+            $(document).ready(function () {
+                $(".no-data-warning").hide();
+                window.sumPower = 0;
+                window.sumAmt = 0;
+                window.sumTime = 0;
+                window.counter = 0;
+                window.avgamount = 0;
+                window.avgpower = 0;
+                window.monthcount = 1;
+                $(".btn-link").click(function () {
+                    window.location.href = "dateconsumption.html";
+                });
+                $("#est-months").change(function () {
+                    window.monthcount = Number($(this).val());
+                    window.avgpower = window.sumPower / window.counter;
+                    window.avgamount = (window.avgpower * window.monthcount * 30) * 0.0008;
+                    $(".est-amount").text(window.avgamount.toFixed(3) + " ₹");
+                    $(".monthh").html('<span style="vertical-align: text-top;">👉🏻</span>&nbsp;&nbsp;Estimated electricity bill of ' + window.monthcount + ' month based in average usage of power will be&nbsp;&nbsp;->');
+                });
+
+                for (var month = 1; month <= 12; month++) {
+                    for (var date = 1; date <= 31; date++) {
+                        month = (month.toString().length == 1) ? "0" + month.toString() : month.toString();
+                        date = (date.toString().length == 1) ? "0" + date.toString() : date.toString();
+                        var strDate = "2020/" + month + "/" + date;
+                        var ref = firebase.database().ref("/data/" + strDate);
+
+                        ref.on("value", function (snapshot)
+                        {
+                            if (snapshot.exists()) {
+                                window.counter++;
+                            }
+                            window.sumPower += snapshot.val().power;
+                            window.sumTime += snapshot.val().time;
+                            window.sumAmt += snapshot.val().amount;
+                            display();
+                        });
+                    }
+                }
+            });
+
+            function display() {
+                $(".sum-power").text(window.sumPower.toFixed(3) + " Kwh");
+
+                var fulltime;
+                var hour, minute, second;
+
+                if (window.sumTime >= 60) {
+                    minute = parseInt(window.sumTime / 60);
+                    second = parseInt(window.sumTime % 60);
+                    fulltime = minute + " m : " + second + " s";
+                }
+
+                if (minute >= 60) {
+                    hour = parseInt(minute / 60);
+                    minute = parseInt(minute % 60);
+                    fulltime = hour + " h : " + minute + " m";
+                }
+
+                if (window.sumTime < 60) {
+                    second = parseInt(window.sumTime);
+                    fulltime = second + " seconds";
+                }
+
+                window.avgpower = window.sumPower / window.counter;
+                window.avgamount = (window.avgpower * window.monthcount * 30) * 0.0008;
+
+                var days = "";
+                if (window.counter == 1) {
+                    days = "1 day";
+                } else {
+                    days = window.counter + " days";
+                }
+                $(".sum-time").text(fulltime);
+                $(".sum-amount").text(window.sumAmt.toFixed(3) + " ₹");
+                $(".est-amount").text(window.avgamount.toFixed(3) + " ₹");
+                $(".sum-days").text(days);
+            }
+
+            $(".kronos-date-outer").click(function () {
+                var date = $("#kronos").val();
+                var ref = firebase.database().ref("/data/" + date);
+                ref.on("value", function (snapshot)
+                {
+                    if (!snapshot.exists()) {
+                        $(".data-container .data:first-child .card-body").text("0.000 Kwh");
+                        $(".data-container .data:nth-child(2) .card-body").text("0 second");
+                        $(".data-container .data:last-child .card-body").text("0.000 ₹");
+                        $(".data-container .data:first-child .card-body").css("color", "rgba(255,0,0,0.5)");
+                        $(".data-container .data:nth-child(2) .card-body").css("color", "rgba(255,0,0,0.5)");
+                        $(".data-container .data:last-child .card-body").css("color", "rgba(255,0,0,0.5)");
+                        $(".no-data-warning").show(500);
+                    } else {
+                        $(".no-data-warning").hide(400);
+                        $(".data-container .data:first-child .card-body").css("color", "#212529");
+                        $(".data-container .data:nth-child(2) .card-body").css("color", "#212529");
+                        $(".data-container .data:last-child .card-body").css("color", "#212529");
+                        var power = snapshot.val().power;
+                        var amount = snapshot.val().amount;
+                        var time = snapshot.val().time;
+                        var fulltime;
+                        var hour, minute, second;
+
+                        if (time >= 60) {
+                            minute = parseInt(time / 60);
+                            second = parseInt(time % 60);
+                            fulltime = minute + " m : " + second + " s";
+                        }
+
+                        if (minute >= 60) {
+                            hour = parseInt(minute / 60);
+                            minute = parseInt(minute % 60);
+                            fulltime = hour + " h : " + minute + " m";
+                        }
+
+                        if (time < 60) {
+                            second = parseInt(time);
+                            fulltime = second + " seconds";
+                        }
+                        $(".data-container .data:first-child .card-body").text(power.toFixed(3) + " Kwh");
+                        $(".data-container .data:nth-child(2) .card-body").text(fulltime);
+                        $(".data-container .data:last-child .card-body").text(amount.toFixed(3) + " ₹");
+                    }
+                });
+            });
+
+        </script>
+    </body>
+</html>

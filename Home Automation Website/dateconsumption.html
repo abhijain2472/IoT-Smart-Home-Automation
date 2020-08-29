@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Power Consumption</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
+        <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+        <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/download.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/kronos.css">
+        <script src="js/jquery.min.js"></script>
+        <script src="js/kronos.js"></script>
+        <style>
+            .header
+            {
+                background: #fff;
+                top: 0;
+                box-shadow: 0px 2px 12px #fcb519;
+            }
+
+            a
+            {
+                text-decoration: none;
+            }
+
+            .header .title
+            {
+                padding: 5px 20px;
+            }
+
+            .header .title a
+            {
+                font-size: 25px;
+                font-family: Poppins-Bold;
+            }
+            .position-sticky {
+                z-index: 100;
+            }
+            @media (max-width : 768px)  {
+                .card {
+                    margin: 30px 0;
+                }
+            }
+            .card-header {
+                font-weight: bold;
+                color: #007bff;
+                font-size: 18px;
+            }
+
+            .card-body {
+                font-weight: bold;
+            }
+            .add::before {
+                content: "";
+                position: absolute;
+                background: #ffc107;
+                width: 80%;
+                height: 1px;
+                bottom: -10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container-fluid" style="padding: 0px">
+            <div class="row header position-sticky no-gutters">
+                <div class="col-md-12 col-sm-12 col-xs-12 title" style="text-align: center">
+                    <a href="onoff.html">IoT based Smart Home Automation System</a>
+                </div>
+            </div>
+
+            <div class="row no-gutters justify-content-center my-5">
+                <div class="col-12 d-flex justify-content-center text-warning">
+                    <h4 style="font-weight: bold;" class="add position-relative d-flex justify-content-center">Record of Power Usage</h4>
+                </div>
+            </div>
+
+            <div class="row no-gutters justify-content-center">
+                <div class="col-8 table-responsive">
+                    <table class="table table-dark table-hover">
+                        <thead style="font-size: 20px">
+                            <tr>
+                                <th>Date</th>
+                                <th>Power</th>
+                                <th>Time</th>
+                                <th>Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody style="color: rgba(255,255,255,0.7);">
+
+                        </tbody>
+                        <tfoot style="font-size: 17px"></tfoot>
+                    </table>
+                    <button id="getSum" class="d-none">dsadsa</button>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+
+            function checkCookie(name) {
+                var cooks = document.cookie.split("; ");
+                for (var i = 0; i < cooks.length; i++) {
+                    var cname = cooks[i].split("=")[0];
+                    var cval = cooks[i].split("=")[1];
+                    if (cname == name) {
+                        if (cval == "")
+                            return null;
+                        else
+                            return cval;
+                    }
+                    else {
+                        return null;
+                    }
+                }
+            }
+
+            if (checkCookie("username") == null) {
+                window.location = "index.html"
+            }
+
+            var firebaseConfig = {
+                apiKey: "AIzaSyD34Ohi70QLhyUFcw6qVhhe9NV7JsErjJg",
+                authDomain: "iottest-7498a.firebaseapp.com",
+                databaseURL: "https://iottest-7498a.firebaseio.com",
+                projectId: "iottest-7498a",
+                storageBucket: "iottest-7498a.appspot.com",
+                messagingSenderId: "512532285678",
+                appId: "1:512532285678:web:8249b844f9bb9dd3398bff",
+                measurementId: "G-R98L1JZWTR"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            var dateObj = new Date();
+            var month = ((dateObj.getMonth() + 1).toString().length == 1) ? "0" + (dateObj.getMonth() + 1).toString() : (dateObj.getMonth() + 1).toString();
+            var date = ((dateObj.getDate()).toString().length == 1) ? "0" + (dateObj.getDate()).toString() : (dateObj.getDate()).toString();
+            var current_date = dateObj.getFullYear() + "/" + month + "/" + date;
+            window.display_date = (dateObj.getFullYear().toString() + month.toString() + date.toString());
+            var ref = firebase.database().ref("/data/" + current_date);
+
+            $('#kronos').kronos({
+                initDate: window.display_date,
+                format: 'yyyy/mm/dd'
+            });
+
+            $(document).ready(function () {
+                $(".no-data-warning").hide();
+                window.sumPower = 0;
+                window.sumAmt = 0;
+                window.sumTime = 0;
+                window.counter = 0;
+                window.avgamount = 0;
+                window.avgpower = 0;
+                window.monthcount = 1;
+
+                $("#est-months").change(function () {
+                    window.monthcount = Number($(this).val());
+                    window.avgpower = window.sumPower / window.counter;
+                    window.avgamount = (window.avgpower * window.monthcount * 30) * 0.0008;
+                    $(".est-amount").text(window.avgamount.toFixed(3) + " ₹");
+                    $(".monthh").html('<span style="vertical-align: text-top;">👉🏻</span>&nbsp;&nbsp;Estimated electricity bill of ' + window.monthcount + ' month based in average usage of power will be&nbsp;&nbsp;->');
+                });
+
+                for (var month = 1; month <= 12; month++) {
+                    for (var date = 1; date <= 31; date++) {
+                        month = (month.toString().length == 1) ? "0" + month.toString() : month.toString();
+                        date = (date.toString().length == 1) ? "0" + date.toString() : date.toString();
+                        var strDate = "2020/" + month + "/" + date;
+                        var ref = firebase.database().ref("/data/" + strDate);
+
+                        ref.on("value", function (snapshot)
+                        {
+                            if (snapshot.exists()) {
+                                window.counter++;
+                            }
+
+                            window.sumPower += snapshot.val().power;
+                            window.sumTime += snapshot.val().time;
+                            window.sumAmt += snapshot.val().amount;
+                            var power = snapshot.val().power;
+                            var amount = snapshot.val().amount;
+                            var time = snapshot.val().time;
+                            var fulltime;
+                            var hour, minute, second;
+
+                            if (time >= 60) {
+                                minute = parseInt(time / 60);
+                                second = parseInt(time % 60);
+                                fulltime = minute + " m : " + second + " s";
+                            }
+
+                            if (minute >= 60) {
+                                hour = parseInt(minute / 60);
+                                minute = parseInt(minute % 60);
+                                fulltime = hour + " h : " + minute + " m";
+                            }
+
+                            if (time < 60) {
+                                second = parseInt(time);
+                                fulltime = second + " seconds";
+                            }
+
+                            $("tbody").append("<tr><td>" + snapshot.ref.parent.parent.key + "/" + snapshot.ref.parent.key + "/" + snapshot.ref.key + "</td><td class='power'>" + power.toFixed(3) + " Kwh</td><td class='time'>" + fulltime + "</td><td class='amount'>" + amount.toFixed(3) + " ₹</td></tr>");
+                            $("tbody tr.sum").remove();
+                            $("tfoot tr.sum").remove();
+                            display();
+                        });
+                    }
+                }
+            });
+
+            function display() {
+
+                var fulltime;
+                var hour, minute, second;
+
+                if (window.sumTime >= 60) {
+                    minute = parseInt(window.sumTime / 60);
+                    second = parseInt(window.sumTime % 60);
+                    fulltime = minute + " m : " + second + " s";
+                }
+
+                if (minute >= 60) {
+                    hour = parseInt(minute / 60);
+                    minute = parseInt(minute % 60);
+                    fulltime = hour + " h : " + minute + " m";
+                }
+
+                if (window.sumTime < 60) {
+                    second = parseInt(window.sumTime);
+                    fulltime = second + " seconds";
+                }
+
+                $("tfoot").append("<tr class='sum'><th>Total</th><th>" + window.sumPower.toFixed(3) + " Kwh</th><th>" + fulltime + "</th><th>" + window.sumAmt.toFixed(3) + " ₹</th></tr>");
+            }
+
+        </script>
+    </body>
+</html>
