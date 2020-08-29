@@ -8,6 +8,8 @@
   <li>This repository contains all the files and required packages related to IoT Smart Home Automation project.</li>
 </ul>
 
+[![watch](image/youtube.png)](https://youtu.be/Z9fsyhKHWDg)
+
 ## ℹ️ Inroduction:
 
 <ul>
@@ -81,6 +83,6 @@
     For Hardware Programming:
     <br><br><br><br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <img src='images/arduino.png' width=200><br><br><br><br>
+    <img src='images/arduino.png' width=150><br><br><br><br>
   </li>
 </ul>
