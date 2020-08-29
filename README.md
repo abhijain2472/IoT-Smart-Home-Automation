@@ -120,5 +120,15 @@
 
 **1.  Abhishek Jain**
 <br><br>&nbsp;&nbsp;&nbsp;<a href='https://github.com/abhijain2472'><img src='images/github.png' width=90></a>
-<br>&nbsp;&nbsp;&nbsp;<a href='https://github.com/abhijain2472'><img src='images/linkedin.png' width=90></a>
-<br>&nbsp;&nbsp;&nbsp;<a href='https://github.com/abhijain2472'><img src='images/twitter.png' width=50></a>
+<br>&nbsp;&nbsp;&nbsp;<a href='https://www.linkedin.com/in/abhijain2472'><img src='images/linkedin.png' width=90></a>
+<br>&nbsp;&nbsp;&nbsp;<a href='https://twitter.com/abhijain2472?s=08'><img src='images/twitter.png' width=50></a>
+
+**2.  Dhruv Patel**
+<br><br>&nbsp;&nbsp;&nbsp;<a href='https://github.com/dhruv2610'><img src='images/github.png' width=90></a>
+<br>&nbsp;&nbsp;&nbsp;<a href='https://www.linkedin.com/in/dhruv-patel-abb962188'><img src='images/linkedin.png' width=90></a>
+<br>&nbsp;&nbsp;&nbsp;<a href='https://twitter.com/Dhruvpatel261?s=08'><img src='images/twitter.png' width=50></a>
+
+**3.  Raj Sathawara**
+<br><br>&nbsp;&nbsp;&nbsp;<a href='https://github.com/abhijain2472'><img src='images/github.png' width=90></a>
+<br>&nbsp;&nbsp;&nbsp;<a href='https://www.linkedin.com/in/abhijain2472'><img src='images/linkedin.png' width=90></a>
+<br>&nbsp;&nbsp;&nbsp;<a href='https://twitter.com/abhijain2472?s=08'><img src='images/twitter.png' width=50></a>
