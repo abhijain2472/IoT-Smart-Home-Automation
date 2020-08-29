@@ -51,21 +51,25 @@
     Back End:
     <br><br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <img src='images/firebase.png' width=250><br><br>
+    <img src='images/firebase.png' width=250>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <img src='images/node.png' width=200><br><br>
   </li>
   <li>
-    Arduino&nbsp;&nbsp;<img src='images/arduino.png' width=40>
+    For Google Assistant, FB Messenger & Telegram:
+    <br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <img src='images/df.png' width=250><br><br>
   </li>
   <li>
-    Node JS&nbsp;&nbsp;<img src='images/node.png' width=40>
+    For Amazon Alexa:
+    <br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <img src='images/alexa.png' width=250><br><br>
   </li>
   <li>
-    Dialogflow&nbsp;&nbsp;<img src='images/df.png' width=40>
-  </li>
-  <li>
-    Firebase&nbsp;&nbsp;<img src='images/firebase.png' width=40>
-  </li>
-  <li>
-    Amazon Alexa&nbsp;&nbsp;<img src='images/alexa.png' width=40>
+    For Hardware Programming:
+    <br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <img src='images/arduino.png' width=250>
   </li>
 </ul>
