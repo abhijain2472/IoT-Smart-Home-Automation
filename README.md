@@ -41,11 +41,17 @@
 
 <ul>
   <li>
-    Front End
+    Front End:
+    <br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <img src='images/firebase.png' width=250><br><br>
+  </li>
+  <li>
+    Back End:
     <br><br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <img src='images/hcj.png' width=250>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <img src='images/flutter.png' width=250>
+    <img src='images/flutter.png' width=250><br><br>
   </li>
   <li>
     Arduino&nbsp;&nbsp;<img src='images/arduino.png' width=40>
