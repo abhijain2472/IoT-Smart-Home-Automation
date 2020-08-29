@@ -35,41 +35,52 @@
       <li>Consumption data can be filtered by date.</li>
     </ul>
   </li>
+  
 </ul>
+
+<div align='center'>
+  <img src="images/ways.png" height='400'>
+</div>
+
+## 🤖 Circuit Diagram :
+
+<div align='center'>
+  <img src="images/iot diagram.png" height='400'>
+</div>
 
 ## 🤖 Technologies :
 
 <ul>
   <li>
     Front End:
-    <br><br>
+    <br><br><br><br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <img src='images/hcj.png' width=250>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <img src='images/flutter.png' width=250><br><br>
+    <img src='images/flutter.png' width=250><br><br><br><br>
   </li>
   <li>
     Back End:
-    <br><br>
+    <br><br><br><br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <img src='images/firebase.png' width=250>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <img src='images/node.png' width=200><br><br>
+    <img src='images/node.png' width=200><br><br><br><br>
   </li>
   <li>
     For Google Assistant, FB Messenger & Telegram:
-    <br><br>
+    <br><br><br><br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <img src='images/df.png' width=250><br><br>
+    <img src='images/df.png' width=250><br><br><br><br>
   </li>
   <li>
     For Amazon Alexa:
-    <br><br>
+    <br><br><br><br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <img src='images/alexa.png' width=250><br><br>
+    <img src='images/alexa.png' width=250><br><br><br><br>
   </li>
   <li>
     For Hardware Programming:
-    <br><br>
+    <br><br><br><br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <img src='images/arduino.png' width=250>
+    <img src='images/arduino.png' width=250><br><br><br><br>
   </li>
 </ul>
