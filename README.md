@@ -8,7 +8,7 @@
   <li>This repository contains all the files and required packages related to IoT Smart Home Automation project.</li>
 </ul>
 
-## Inroduction
+## ℹ️ Inroduction:
 
 <ul>
   <li>IoT Smart Home Automation is a solution that enable us to control our home appliaces through Mobile, PC/Laptop, Alexa, Google Assistant and Telegram. This project even provides user to monitor power consumption of respective devices.</li>
@@ -42,7 +42,7 @@
   <img src="images/ways.png" height='400'>
 </div>
 
-## 🤖 Circuit Diagram :
+## 📊 Circuit Diagram :
 
 <div align='center'>
   <img src="images/iot diagram.png" height='400'>
@@ -75,12 +75,12 @@
     For Amazon Alexa:
     <br><br><br><br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <img src='images/alexa.png' width=250><br><br><br><br>
+    <img src='images/alexa.png' width=200><br><br><br><br>
   </li>
   <li>
     For Hardware Programming:
     <br><br><br><br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <img src='images/arduino.png' width=250><br><br><br><br>
+    <img src='images/arduino.png' width=200><br><br><br><br>
   </li>
 </ul>
