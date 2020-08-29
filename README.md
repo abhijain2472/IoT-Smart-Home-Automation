@@ -86,3 +86,13 @@
     <img src='images/arduino.png' width=150><br><br><br><br>
   </li>
 </ul>
+<br>
+
+## 📱 Some Screenshots :
+
+<div align='center'>
+ <img src="images/app_welcome.jpg" height='300'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="images/app_home.jpg" height='300'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="images/app_powerusage.jpg" height='300'>
+</div>
+
