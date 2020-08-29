@@ -6,9 +6,8 @@
 
 <ul>
   <li>This repository contains all the files and required packages related to IoT Smart Home Automation project.</li>
+  <li>[IoT Smart Home AUtomation Full Video](https://youtu.be/Z9fsyhKHWDg)[![watch](images/youtube.png)](https://youtu.be/Z9fsyhKHWDg)</li>
 </ul>
-
-[OverView Video](https://youtu.be/Z9fsyhKHWDg)[![watch](images/youtube.png)](https://youtu.be/Z9fsyhKHWDg)
 
 ## ℹ️ Inroduction:
 
