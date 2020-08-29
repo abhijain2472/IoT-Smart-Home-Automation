@@ -1,5 +1,5 @@
 <div align='center'>
-  <img src='images/mix1.jpg' width=600>
+  <img src='../images/mix1.jpg' width=600>
 </div>
 
 ## Project Preview
