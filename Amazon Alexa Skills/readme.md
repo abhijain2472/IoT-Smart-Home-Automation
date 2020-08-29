@@ -1,5 +1,5 @@
 <div align='center'>
-  <img src='../images/alexa.png'>
+  <img src='../images/alexa.png' width='400'>
 </div>
 
 ## 💠 Alexa Skills Kit
