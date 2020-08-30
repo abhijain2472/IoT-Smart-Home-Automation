@@ -9,20 +9,20 @@
   <li>Here is the complete application of IoT Smart Home Automation.</li>
 </ul>
 
-## 📁 Packages
+## 📁 Packages Used :
 <ul>
-  <li>Font Awesome Icons (font_awesome_flutter)</li><br>
-  <li>Google Fonts (google_fonts)</li><br>
-  <li>URL Launcher (url_launcher)</li><br>
-  <li>Device Apps (device_apps)</li><br>
-  <li>Audio Player (audioplayers)</li><br>
-  <li>Datetime (intl)</li><br>
-  <li>Firebase Real-time Database (firebase_database)</li><br>
-  <li>Share (share)</li><br>
-  <li>Firebase Authentication (firebase_auth)</li><br>
-  <li>Input Fields (pin_input_text_field)</li><br>
-  <li>Loader Icons (flutter_spinkit)</li><br>
-  <li>Pie Chart (pie_chart)</li><br>
-  <li>Connectivity (connectivity)</li><br>
-  <li>Progress dialog (progress_dialog)</li>
+  <li><a href="https://pub.dev/packages/font_awesome_flutter" target="_blank">Font Awesome Icons (font_awesome_flutter)</li><br>
+  <li><a href="https://pub.dev/packages/google_fonts" target="_blank">Google Fonts (google_fonts)</a></li><br>
+  <li><a href="https://pub.dev/packages/url_launcher" target="_blank">URL Launcher (url_launcher)</a></li><br>
+  <li><a href="https://pub.dev/packages/device_apps" target="_blank">Device Apps (device_apps)</a></li><br>
+  <li><a href="https://pub.dev/packages/audioplayers" target="_blank">Audio Player (audioplayers)</a></li><br>
+  <li><a href="https://pub.dev/packages/intl" target="_blank">Datetime (intl)</a></li><br>
+  <li><a href="https://pub.dev/packages/firebase_database" target="_blank">Firebase Real-time Database (firebase_database)</a></li><br>
+  <li><a href="https://pub.dev/packages/share" target="_blank">Share (share)</a></li><br>
+  <li><a href="https://pub.dev/packages/firebase_auth" target="_blank">Firebase Authentication (firebase_auth)</a></li><br>
+  <li><a href="https://pub.dev/packages/pin_input_text_field" target="_blank">Input Fields (pin_input_text_field)</a></li><br>
+  <li><a href="https://pub.dev/packages/flutter_spinkit" target="_blank">Loader Icons (flutter_spinkit)</a></li><br>
+  <li><a href="https://pub.dev/packages/pie_chart" target="_blank">Pie Chart (pie_chart)</a></li><br>
+  <li><a href="https://pub.dev/packages/connectivity" target="_blank">Connectivity (connectivity)</a></li><br>
+  <li><a href="https://pub.dev/packages/progress_dialog" target="_blank">Progress dialog (progress_dialog)</a></li>
 </ul>
