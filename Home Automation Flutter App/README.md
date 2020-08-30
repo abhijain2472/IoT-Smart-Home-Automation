@@ -10,6 +10,7 @@
 </ul>
 
 ## 📁 Packages Used :
+
 <ul>
   <li><a href="https://pub.dev/packages/font_awesome_flutter" target="_blank">Font Awesome Icons (font_awesome_flutter)</li><br>
   <li><a href="https://pub.dev/packages/google_fonts" target="_blank">Google Fonts (google_fonts)</a></li><br>
@@ -26,3 +27,12 @@
   <li><a href="https://pub.dev/packages/connectivity" target="_blank">Connectivity (connectivity)</a></li><br>
   <li><a href="https://pub.dev/packages/progress_dialog" target="_blank">Progress dialog (progress_dialog)</a></li>
 </ul>
+
+
+## Screens :
+
+<div align='center'>
+  <img src="../images/app_welcome.jpg" height='300'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="../images/app_home.jpg" height='300'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="../images/app_powerusage.jpg" height='300'>
+</div>
