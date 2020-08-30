@@ -117,3 +117,10 @@
 <br><br>&nbsp;&nbsp;&nbsp;<a href='https://github.com/raj1234sa' target='_blank'><img src='images/github.png' width=70></a>
 <br><br>&nbsp;&nbsp;&nbsp;<a href='https://www.linkedin.com/in/raj-sathawara-681752117' target='_blank'><img src='images/linkedin.png' width=70></a>
 <br><br>&nbsp;&nbsp;&nbsp;<a href='https://twitter.com/KadiyaPratham?s=08' target='_blank'><img src='images/twitter.png' width=70></a>
+
+## 🤝🏻 Graphic Designer & Video Editing :
+
+**1.  Viraj Patel (pviraj98@gmail.com)**
+<br><br>&nbsp;&nbsp;&nbsp;<a href='https://github.com/abhijain2472' target='_blank'><img src='images/instagam.png' width=30></a>
+<br><br>&nbsp;&nbsp;&nbsp;<a href='https://www.linkedin.com/in/virajpatel98' target='_blank'><img src='images/linkedin.png' width=70></a>
+<br><br>&nbsp;&nbsp;&nbsp;<a href='https://twitter.com/BhartiyaaNagrik?s=08' target='_blank'><img src='images/twitter.png' width=70></a>
