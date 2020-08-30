@@ -104,16 +104,19 @@
 ## 🤝🏻 Project Team :
 
 **1.  Abhishek Jain (abhishekjain2472@gmail.com)**
+<br><br>&nbsp;&nbsp;&nbsp;<a href='https://instagram.com/abhijain2472?igshid=15hg7ep3vtioq' target='_blank'><img src='images/insta.png' width=70></a>
 <br><br>&nbsp;&nbsp;&nbsp;<a href='https://github.com/abhijain2472' target='_blank'><img src='images/github.png' width=70></a>
 <br><br>&nbsp;&nbsp;&nbsp;<a href='https://www.linkedin.com/in/abhijain2472' target='_blank'><img src='images/linkedin.png' width=70></a>
 <br><br>&nbsp;&nbsp;&nbsp;<a href='https://twitter.com/abhijain2472?s=08' target='_blank'><img src='images/twitter.png' width=70></a>
 <br><br><br>
 **2.  Dhruv Patel (dhruvap.2610@gmail.com)**
+<br><br>&nbsp;&nbsp;&nbsp;<a href='https://instagram.com/it_z_dhruv_?igshid=1xxujk8y9rj97' target='_blank'><img src='images/insta.png' width=70></a>
 <br><br>&nbsp;&nbsp;&nbsp;<a href='https://github.com/dhruv2610' target='_blank'><img src='images/github.png' width=70></a>
 <br><br>&nbsp;&nbsp;&nbsp;<a href='https://www.linkedin.com/in/dhruv-patel-abb962188' target='_blank'><img src='images/linkedin.png' width=70></a>
 <br><br>&nbsp;&nbsp;&nbsp;<a href='https://twitter.com/Dhruvpatel261?s=08' target='_blank'><img src='images/twitter.png' width=70></a>
 <br><br><br>
 **3.  Raj Sathawara (rajsathawara@gmail.com)**
+<br><br>&nbsp;&nbsp;&nbsp;<a href='https://instagram.com/raj.sathawara?igshid=qnagtr8q5jij' target='_blank'><img src='images/insta.png' width=70></a>
 <br><br>&nbsp;&nbsp;&nbsp;<a href='https://github.com/raj1234sa' target='_blank'><img src='images/github.png' width=70></a>
 <br><br>&nbsp;&nbsp;&nbsp;<a href='https://www.linkedin.com/in/raj-sathawara-681752117' target='_blank'><img src='images/linkedin.png' width=70></a>
 <br><br>&nbsp;&nbsp;&nbsp;<a href='https://twitter.com/KadiyaPratham?s=08' target='_blank'><img src='images/twitter.png' width=70></a>
@@ -121,6 +124,7 @@
 ## 📷 Graphic Designer & Video Editing :
 
 **1.  Viraj Patel (pviraj98@gmail.com)**
-<br><br>&nbsp;&nbsp;&nbsp;<a href='https://www.instagram.com/callme.adesigner/' target='_blank'><img src='images/instagam.png' width=30></a>
+<br><br>&nbsp;&nbsp;&nbsp;<a href='https://www.instagram.com/callme.adesigner/' target='_blank'><img src='images/insta.png' width=30></a>
 <br><br>&nbsp;&nbsp;&nbsp;<a href='https://www.linkedin.com/in/virajpatel98' target='_blank'><img src='images/linkedin.png' width=70></a>
 <br><br>&nbsp;&nbsp;&nbsp;<a href='https://twitter.com/BhartiyaaNagrik?s=08' target='_blank'><img src='images/twitter.png' width=70></a>
+<br><br>&nbsp;&nbsp;&nbsp;<a href='https://www.youtube.com/channel/UCX0NM2TEIizoTqDO9hlCWZg' target='_blank'><img src='images/yt.png' width=70></a>
