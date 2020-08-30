@@ -1,6 +1,6 @@
 <br>
 <div align='center'>
-  <img src='images/hcj.png' width=450>
+  <img src='../images/hcj.png' width=450>
 </div>
 <br>
 
