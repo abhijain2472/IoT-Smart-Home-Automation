@@ -53,7 +53,7 @@
 <div align='center'>
   <img src="images/iot diagram.png" height='400'>
 </div>
-<br><br>
+<hr>
 <div align='center'>
   <img src="images/flow.png" height='400'>
 </div>
