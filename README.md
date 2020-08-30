@@ -61,6 +61,18 @@
 </div>
 <br>
 
+## ⚙️ Hardwares used :
+
+<ul>
+  <li><a target="_blank" href="https://www.amazon.in/Easy-Electronics-NodeMcu-Development-Board/dp/B06XYRS6KC/ref=sr_1_1?dchild=1&keywords=s+8266&qid=1598761236&sr=8-1">Node-MCU ESP8266</a></li>
+  <li><a href="https://www.amazon.in/Generic-ACS712-Current-Sensor-Module/dp/B00NU8XD80/ref=sr_1_1?dchild=1&keywords=Current+Sensor+ACS712&qid=1598761326&sr=8-1" target="_blank">Current Sensor ACS712</a></li>
+  <li><a href="https://www.amazon.in/AusleseTM-Channel-Module-Raspberry-Trigger/dp/B08C7W3B41/ref=sr_1_2?dchild=1&keywords=Relay+Module&qid=1598761358&sr=8-2" target="_blank">Relay Module</a></li>
+  <li><a href="https://www.amazon.in/Robodo-SEN3-Pyroelectric-Infrared-Detector/dp/B073Q399F6/ref=sr_1_6?dchild=1&keywords=PIR+Motion+Sensor&qid=1598761388&sr=8-6" target="_blank">PIR Motion Sensor</a></li>
+  <li><a href="https://www.amazon.in/ApTechDeals-Jumper-Female-breadboard-jumper/dp/B074J9CPV3/ref=sr_1_1?dchild=1&keywords=Male-Female+wires&qid=1598761452&sr=8-1" target="_blank">Male-Female Wires</a></li>
+  <li>100W Bulb</li>
+  <li>Powerbank</li>
+</ul>
+
 ## 📱 Some Screenshots :
 
 <div align='center'>
