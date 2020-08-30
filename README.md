@@ -124,7 +124,7 @@
 ## 📷 Graphic Designer & Video Editing :
 
 **1.  Viraj Patel (pviraj98@gmail.com)**
-<br><br>&nbsp;&nbsp;&nbsp;<a href='https://www.instagram.com/callme.adesigner/' target='_blank'><img src='images/insta.png' width=30></a>
+<br><br>&nbsp;&nbsp;&nbsp;<a href='https://www.instagram.com/callme.adesigner/' target='_blank'><img src='images/insta.png' width=70></a>
 <br><br>&nbsp;&nbsp;&nbsp;<a href='https://www.linkedin.com/in/virajpatel98' target='_blank'><img src='images/linkedin.png' width=70></a>
 <br><br>&nbsp;&nbsp;&nbsp;<a href='https://twitter.com/BhartiyaaNagrik?s=08' target='_blank'><img src='images/twitter.png' width=70></a>
 <br><br>&nbsp;&nbsp;&nbsp;<a href='https://www.youtube.com/channel/UCX0NM2TEIizoTqDO9hlCWZg' target='_blank'><img src='images/yt.png' width=70></a>
