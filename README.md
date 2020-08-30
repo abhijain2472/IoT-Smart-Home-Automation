@@ -53,6 +53,10 @@
 <div align='center'>
   <img src="images/iot diagram.png" height='400'>
 </div>
+<br><br>
+<div align='center'>
+  <img src="images/flow.png" height='400'>
+</div>
 
 ## 🤖 Technologies :
 
