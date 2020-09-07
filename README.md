@@ -1,5 +1,5 @@
 <div align='center'>
-  <img src="images/mix2.jpg" height='400'>
+  <img src="images/thumb.png" height='400'>
 </div>
 
 # IoT Smart Home Automation ✨
