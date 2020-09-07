@@ -9,6 +9,20 @@
 </ul>
 
 ## [![watch](images/youtube.png)](https://youtu.be/u44gbTO9PWA) [IoT Smart Home Automation Project Full Demo Video](https://youtu.be/u44gbTO9PWA)
+<br> <br>
+
+
+
+## Project Preview
+
+<div align='center'>
+  <img src='images/mix1.jpg' width=200>
+</div>
+
+🟢 [Click Here to download APK](https://github.com/abhijain2472/IoT-Smart-Home-Automation/raw/master/APK/Home%20Automation.apk) 📲 (PIN: 123456)
+<br><br>
+🟢 [Click Here to go to website](https://iottest-7498a.firebaseapp.com) 🖥️ (PIN: 123456)
+
 
 ## ℹ️ Inroduction :
 
